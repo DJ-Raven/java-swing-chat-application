@@ -11,7 +11,6 @@ public class Chat_Body extends javax.swing.JPanel {
         init();
         addItemRight("Send a text message to a group of contacts. Include photos, personalize your texts, and track who clicked your links.");
         addItemRight("hello\nHi");
-        addItemLeft("There are many writing apps for you to choose from today, so why bother with yet another one? Because Simpletext is different — it’s thoughtful simplicity provides an experience unlike any other writing apps you have used before.");
         addItemLeft("Simpletext started as a passion project because I couldn’t find what I was looking for. Most apps were trying to do too much and ended up bloated with features I don’t need. So I built Simpletext based on a simple premise — what if there’s an app that refuses to do more, choosing instead to do just one thing, and do it well? For Simpletext, that one thing is writing.");
         addItemLeft("hello\nerererew\newewe");
         addItemRight("hello\nerererew\newewe");
