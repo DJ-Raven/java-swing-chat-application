@@ -13,5 +13,7 @@ visit my youtube : https://www.youtube.com/c/HelloWorld-Raven/featured
 ![5](https://user-images.githubusercontent.com/58245926/121031844-ebeb6980-c7d4-11eb-80f2-1b08b69e3d5f.png)
 ### Part 6
 ![6](https://user-images.githubusercontent.com/58245926/121218220-c03bb280-c8ac-11eb-8884-78dec15e0034.png)
+### Part 7
+![7](https://user-images.githubusercontent.com/58245926/121385406-47ebf480-c973-11eb-9197-b68aae021e87.png)
 
-### Part 7 ( Loading ... )
+### Part 8 ( Loading ... )
