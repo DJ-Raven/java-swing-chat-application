@@ -1,10 +1,14 @@
 package com.raven.component;
 
+import com.raven.event.EventFileReceiver;
 import com.raven.event.EventFileSender;
 import com.raven.model.Model_File_Sender;
 import com.raven.model.Model_Receive_Image;
+import com.raven.service.Service;
 import com.raven.swing.blurHash.BlurHash;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
@@ -41,6 +45,27 @@ public class Image_Item extends javax.swing.JLayeredPane {
         img.setRGB(0, 0, width, height, data, 0, width);
         Icon icon = new ImageIcon(img);
         pic.setImage(icon);
+        try {
+            Service.getInstance().addFileReceiver(dataImage.getFileID(), new EventFileReceiver() {
+                @Override
+                public void onReceiving(double percentage) {
+                    progress.setValue((int) percentage);
+                }
+
+                @Override
+                public void onStartReceiving() {
+
+                }
+
+                @Override
+                public void onFinish(File file) {
+                    progress.setVisible(false);
+                    pic.setImage(new ImageIcon(file.getAbsolutePath()));
+                }
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @SuppressWarnings("unchecked")
