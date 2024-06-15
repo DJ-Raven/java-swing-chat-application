@@ -8,6 +8,7 @@ import com.raven.model.Model_Message;
 import com.raven.model.Model_Register;
 import com.raven.model.Model_User_Account;
 import com.raven.service.Service;
+import com.raven.swing.PanelSlider;
 import io.socket.client.Ack;
 
 public class Login extends javax.swing.JPanel {
@@ -18,7 +19,11 @@ public class Login extends javax.swing.JPanel {
     }
 
     private void init() {
+        P_Login login = new P_Login();
+        P_Register register = new P_Register();
+        slide.showSlid(login, PanelSlider.SliderType.NONE);
         PublicEvent.getInstance().addEventLogin(new EventLogin() {
+
             @Override
             public void login(Model_Login data) {
                 new Thread(new Runnable() {
@@ -68,17 +73,14 @@ public class Login extends javax.swing.JPanel {
 
             @Override
             public void goRegister() {
-                slide.show(1);
+                slide.showSlid(register, PanelSlider.SliderType.RIGHT_TO_LEFT);
             }
 
             @Override
             public void goLogin() {
-                slide.show(0);
+                slide.showSlid(login, PanelSlider.SliderType.LEFT_TO_RIGHT);
             }
         });
-        P_Login login = new P_Login();
-        P_Register register = new P_Register();
-        slide.init(login, register);
     }
 
     @SuppressWarnings("unchecked")
@@ -90,7 +92,7 @@ public class Login extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        slide = new com.raven.swing.PanelSlide();
+        slide = new com.raven.swing.PanelSlider();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -127,17 +129,6 @@ public class Login extends javax.swing.JPanel {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         slide.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout slideLayout = new javax.swing.GroupLayout(slide);
-        slide.setLayout(slideLayout);
-        slideLayout.setHorizontalGroup(
-            slideLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 256, Short.MAX_VALUE)
-        );
-        slideLayout.setVerticalGroup(
-            slideLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 318, Short.MAX_VALUE)
-        );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -207,6 +198,6 @@ public class Login extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private com.raven.swing.PictureBox pic;
-    private com.raven.swing.PanelSlide slide;
+    private com.raven.swing.PanelSlider slide;
     // End of variables declaration//GEN-END:variables
 }
