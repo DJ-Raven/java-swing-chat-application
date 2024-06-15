@@ -1,10 +1,10 @@
 package com.raven.form;
 
+import com.formdev.flatlaf.FlatClientProperties;
 import com.raven.component.Item_People;
 import com.raven.event.EventMenuLeft;
 import com.raven.event.PublicEvent;
 import com.raven.model.Model_User_Account;
-import com.raven.swing.ScrollBar;
 import java.awt.Component;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,15 +20,21 @@ public class Menu_Left extends javax.swing.JPanel {
     }
 
     private void init() {
-        sp.setVerticalScrollBar(new ScrollBar());
-        menuList.setLayout(new MigLayout("fillx", "0[]0", "0[]0"));
+        sp.getVerticalScrollBar().putClientProperty(FlatClientProperties.STYLE, ""
+                + "width:5;"
+                + "background:null;"
+                + "trackArc:$ScrollBar.thumbArc;"
+                + "thumbInsets:0,0,0,0;");
+        menuList.setLayout(new MigLayout("fillx", "0[fill]0", "0[]0"));
         userAccount = new ArrayList<>();
         PublicEvent.getInstance().addEventMenuLeft(new EventMenuLeft() {
             @Override
             public void newUser(List<Model_User_Account> users) {
                 for (Model_User_Account d : users) {
                     userAccount.add(d);
-                    menuList.add(new Item_People(d), "wrap");
+                    for (int i = 0; i < 30; i++) {
+                        menuList.add(new Item_People(d), "wrap");
+                    }
                     refreshMenuList();
                 }
             }

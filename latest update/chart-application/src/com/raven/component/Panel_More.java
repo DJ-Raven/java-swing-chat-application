@@ -1,5 +1,6 @@
 package com.raven.component;
 
+import com.formdev.flatlaf.FlatClientProperties;
 import com.raven.app.MessageType;
 import com.raven.emoji.Emogi;
 import com.raven.emoji.Model_Emoji;
@@ -8,7 +9,6 @@ import com.raven.main.Main;
 import com.raven.model.Model_Send_Message;
 import com.raven.model.Model_User_Account;
 import com.raven.service.Service;
-import com.raven.swing.ScrollBar;
 import com.raven.swing.WrapLayout;
 import java.awt.Component;
 import java.awt.Cursor;
@@ -16,6 +16,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -55,9 +56,12 @@ public class Panel_More extends javax.swing.JPanel {
         panelDetail = new JPanel();
         panelDetail.setLayout(new WrapLayout(WrapLayout.LEFT));    //  use warp layout
         JScrollPane ch = new JScrollPane(panelDetail);
-        ch.setBorder(null);
+        ch.setBorder(BorderFactory.createEmptyBorder());
         ch.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-        ch.setVerticalScrollBar(new ScrollBar());
+        ch.getVerticalScrollBar().putClientProperty(FlatClientProperties.STYLE, ""
+                + "width:5;"
+                + "background:null;"
+                + "thumbInsets:0,0,0,0;");
         //  test color
         add(ch, "w 100%, h 100%");
     }
