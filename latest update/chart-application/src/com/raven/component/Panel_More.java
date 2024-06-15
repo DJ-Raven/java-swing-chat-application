@@ -62,6 +62,7 @@ public class Panel_More extends javax.swing.JPanel {
                 + "width:5;"
                 + "background:null;"
                 + "thumbInsets:0,0,0,0;");
+        ch.getVerticalScrollBar().setUnitIncrement(10);
         //  test color
         add(ch, "w 100%, h 100%");
         showDefaultStyleEmoji();

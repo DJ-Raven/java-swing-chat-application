@@ -25,6 +25,7 @@ public class Menu_Left extends javax.swing.JPanel {
                 + "background:null;"
                 + "trackArc:$ScrollBar.thumbArc;"
                 + "thumbInsets:0,0,0,0;");
+        sp.getVerticalScrollBar().setUnitIncrement(10);
         menuList.setLayout(new MigLayout("fillx", "0[fill]0", "0[]0"));
         userAccount = new ArrayList<>();
         PublicEvent.getInstance().addEventMenuLeft(new EventMenuLeft() {

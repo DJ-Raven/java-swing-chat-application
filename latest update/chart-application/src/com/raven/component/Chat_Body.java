@@ -25,6 +25,7 @@ public class Chat_Body extends javax.swing.JPanel {
                 + "background:null;"
                 + "trackInsets:5,0,5,0;"
                 + "thumbInsets:5,0,5,0;");
+        sp.getVerticalScrollBar().setUnitIncrement(10);
     }
 
     public void addItemLeft(Model_Receive_Message data) {

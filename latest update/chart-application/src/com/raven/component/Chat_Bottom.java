@@ -64,6 +64,7 @@ public class Chat_Bottom extends javax.swing.JPanel {
                 + "width:2;"
                 + "thumbInsets:0,0,0,0;"
                 + "track:#E5E5E5;");
+        sb.setUnitIncrement(10);
         scroll.setVerticalScrollBar(sb);
         add(sb, "h 0:10:");
         add(scroll, "w 100%");
