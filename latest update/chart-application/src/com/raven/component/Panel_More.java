@@ -64,6 +64,7 @@ public class Panel_More extends javax.swing.JPanel {
                 + "thumbInsets:0,0,0,0;");
         //  test color
         add(ch, "w 100%, h 100%");
+        showDefaultStyleEmoji();
     }
 
     private JButton getButtonImage() {
@@ -119,22 +120,15 @@ public class Panel_More extends javax.swing.JPanel {
     }
 
     private JButton getEmojiStyle1() {
-        OptionButton cmd = new OptionButton();
-        cmd.setIcon(Emogi.getInstance().getImoji(1).toSize(25, 25).getIcon());
-        cmd.addActionListener(new ActionListener() {
+        cmdDefaultEmoji = new OptionButton();
+        cmdDefaultEmoji.setIcon(Emogi.getInstance().getImoji(1).toSize(25, 25).getIcon());
+        cmdDefaultEmoji.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                clearSelected();
-                cmd.setSelected(true);
-                panelDetail.removeAll();
-                for (Model_Emoji d : Emogi.getInstance().getStyle1()) {
-                    panelDetail.add(getButton(d));
-                }
-                panelDetail.repaint();
-                panelDetail.revalidate();
+                showDefaultStyleEmoji();
             }
         });
-        return cmd;
+        return cmdDefaultEmoji;
     }
 
     private JButton getEmojiStyle2() {
@@ -154,6 +148,17 @@ public class Panel_More extends javax.swing.JPanel {
             }
         });
         return cmd;
+    }
+
+    private void showDefaultStyleEmoji() {
+        clearSelected();
+        cmdDefaultEmoji.setSelected(true);
+        panelDetail.removeAll();
+        for (Model_Emoji d : Emogi.getInstance().getStyle1()) {
+            panelDetail.add(getButton(d));
+        }
+        panelDetail.repaint();
+        panelDetail.revalidate();
     }
 
     private JButton getButton(Model_Emoji data) {
@@ -205,8 +210,10 @@ public class Panel_More extends javax.swing.JPanel {
         String name = file.getName().toLowerCase();
         return name.endsWith(".jpg") || name.endsWith(".png") || name.endsWith(".jpeg") || name.endsWith(".gif");
     }
+
     private JPanel panelHeader;
     private JPanel panelDetail;
+    private OptionButton cmdDefaultEmoji;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
