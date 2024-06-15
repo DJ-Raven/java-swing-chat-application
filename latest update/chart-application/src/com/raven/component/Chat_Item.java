@@ -1,5 +1,6 @@
 package com.raven.component;
 
+import com.formdev.flatlaf.FlatClientProperties;
 import com.raven.model.Model_File_Sender;
 import com.raven.model.Model_Receive_Image;
 import java.awt.Color;
@@ -36,7 +37,8 @@ public class Chat_Item extends javax.swing.JLayeredPane {
         cmd.setContentAreaFilled(false);
         cmd.setFocusable(false);
         cmd.setForeground(new Color(30, 121, 213));
-        cmd.setFont(new java.awt.Font("sansserif", 1, 13));
+        cmd.putClientProperty(FlatClientProperties.STYLE, ""
+                + "font:bold;");
         txt.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 10, 5, 10));
         layer.add(cmd);
         add(layer, 0);

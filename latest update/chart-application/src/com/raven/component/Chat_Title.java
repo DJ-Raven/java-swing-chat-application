@@ -1,5 +1,6 @@
 package com.raven.component;
 
+import com.formdev.flatlaf.FlatClientProperties;
 import com.raven.model.Model_User_Account;
 import java.awt.Color;
 
@@ -13,6 +14,8 @@ public class Chat_Title extends javax.swing.JPanel {
 
     public Chat_Title() {
         initComponents();
+        lbName.putClientProperty(FlatClientProperties.STYLE, ""
+                + "font:+1 bold;");
     }
 
     public void setUserName(Model_User_Account user) {
@@ -58,7 +61,6 @@ public class Chat_Title extends javax.swing.JPanel {
 
         layer.setLayout(new java.awt.GridLayout(0, 1));
 
-        lbName.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         lbName.setForeground(new java.awt.Color(66, 66, 66));
         lbName.setText("Name");
         layer.add(lbName);
@@ -80,7 +82,7 @@ public class Chat_Title extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(3, 3, 3)
-                .addComponent(layer, javax.swing.GroupLayout.PREFERRED_SIZE, 34, Short.MAX_VALUE)
+                .addComponent(layer, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
                 .addGap(3, 3, 3))
         );
     }// </editor-fold>//GEN-END:initComponents

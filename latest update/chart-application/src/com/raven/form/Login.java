@@ -1,5 +1,6 @@
 package com.raven.form;
 
+import com.formdev.flatlaf.FlatClientProperties;
 import com.raven.event.EventLogin;
 import com.raven.event.EventMessage;
 import com.raven.event.PublicEvent;
@@ -22,6 +23,9 @@ public class Login extends javax.swing.JPanel {
         P_Login login = new P_Login();
         P_Register register = new P_Register();
         slide.showSlid(login, PanelSlider.SliderType.NONE);
+        lbTitle.putClientProperty(FlatClientProperties.STYLE, ""
+                + "font:+5;");
+
         PublicEvent.getInstance().addEventLogin(new EventLogin() {
 
             @Override
@@ -88,7 +92,7 @@ public class Login extends javax.swing.JPanel {
     private void initComponents() {
 
         pic = new com.raven.swing.PictureBox();
-        jLabel2 = new javax.swing.JLabel();
+        lbTitle = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
@@ -98,11 +102,10 @@ public class Login extends javax.swing.JPanel {
 
         pic.setImage(new javax.swing.ImageIcon(getClass().getResource("/com/raven/icon/login_image.png"))); // NOI18N
 
-        jLabel2.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(66, 66, 66));
-        jLabel2.setText("Chat Application");
+        lbTitle.setForeground(new java.awt.Color(66, 66, 66));
+        lbTitle.setText("Chat Application");
 
-        pic.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        pic.setLayer(lbTitle, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout picLayout = new javax.swing.GroupLayout(pic);
         pic.setLayout(picLayout);
@@ -110,14 +113,14 @@ public class Login extends javax.swing.JPanel {
             picLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(picLayout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(jLabel2)
-                .addContainerGap(576, Short.MAX_VALUE))
+                .addComponent(lbTitle)
+                .addContainerGap(617, Short.MAX_VALUE))
         );
         picLayout.setVerticalGroup(
             picLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, picLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
+                .addComponent(lbTitle)
                 .addGap(0, 0, 0))
         );
 
@@ -194,9 +197,9 @@ public class Login extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lbTitle;
     private com.raven.swing.PictureBox pic;
     private com.raven.swing.PanelSlider slide;
     // End of variables declaration//GEN-END:variables
