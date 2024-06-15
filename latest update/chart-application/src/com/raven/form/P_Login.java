@@ -30,7 +30,11 @@ public class P_Login extends javax.swing.JPanel {
 
         jLabel1.setText("User Name");
 
+        txtUser.setText("raven");
+
         jLabel2.setText("Password");
+
+        txtPass.setText("123");
 
         cmdLogin.setText("Login");
         cmdLogin.addActionListener(new java.awt.event.ActionListener() {

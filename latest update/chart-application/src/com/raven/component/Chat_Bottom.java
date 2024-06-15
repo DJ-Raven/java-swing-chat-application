@@ -40,7 +40,7 @@ public class Chat_Bottom extends javax.swing.JPanel {
     }
 
     private void init() {
-        mig = new MigLayout("fillx, filly", "0[fill]0[]0[]2", "2[fill]2[]0");
+        mig = new MigLayout("fill", "0[]0[fill,grow]0[]2", "2[fill]2[]0");
         setLayout(mig);
         JScrollPane scroll = new JScrollPane();
         scroll.setBorder(null);
