@@ -31,5 +31,3 @@ visit my youtube : https://www.youtube.com/c/HelloWorld-Raven/featured
 ![2021-07-29_202202](https://user-images.githubusercontent.com/58245926/127518773-96d719b3-e56e-46a5-bd24-05234898e1bd.png)
 ### Part 22
 ![2021-07-29_215509](https://user-images.githubusercontent.com/58245926/127679412-9e44a5ce-1a28-4c5b-ab21-4c436db3f1b7.png)
-
-### Part 23 ( Loading ... )
