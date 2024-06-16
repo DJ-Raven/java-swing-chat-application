@@ -1,12 +1,11 @@
 package com.raven.component;
 
+import com.formdev.flatlaf.FlatClientProperties;
 import com.raven.app.MessageType;
 import com.raven.emoji.Emogi;
 import com.raven.model.Model_Receive_Message;
 import com.raven.model.Model_Send_Message;
-import com.raven.swing.ScrollBar;
 import java.awt.Adjustable;
-import java.awt.Color;
 import java.awt.event.AdjustmentEvent;
 import java.awt.event.AdjustmentListener;
 import javax.swing.JScrollBar;
@@ -21,8 +20,12 @@ public class Chat_Body extends javax.swing.JPanel {
 
     private void init() {
         body.setLayout(new MigLayout("fillx", "", "5[bottom]5"));
-        sp.setVerticalScrollBar(new ScrollBar());
-        sp.getVerticalScrollBar().setBackground(Color.WHITE);
+        sp.getVerticalScrollBar().putClientProperty(FlatClientProperties.STYLE, ""
+                + "width:5;"
+                + "background:null;"
+                + "trackInsets:5,0,5,0;"
+                + "thumbInsets:5,0,5,0;");
+        sp.getVerticalScrollBar().setUnitIncrement(10);
     }
 
     public void addItemLeft(Model_Receive_Message data) {

@@ -1,5 +1,6 @@
 package com.raven.component;
 
+import com.formdev.flatlaf.FlatClientProperties;
 import com.raven.event.PublicEvent;
 import com.raven.model.Model_User_Account;
 import java.awt.Color;
@@ -17,7 +18,11 @@ public class Item_People extends javax.swing.JPanel {
     public Item_People(Model_User_Account user) {
         this.user = user;
         initComponents();
+        lb.putClientProperty(FlatClientProperties.STYLE, ""
+                + "font:+1;");
         lb.setText(user.getUserName());
+        lbStatus.putClientProperty(FlatClientProperties.STYLE, ""
+                + "font:-1 italic;");
         activeStatus.setActive(user.isStatus());
         init();
     }
@@ -63,10 +68,8 @@ public class Item_People extends javax.swing.JPanel {
         imageAvatar1.setBorderSize(0);
         imageAvatar1.setImage(new javax.swing.ImageIcon(getClass().getResource("/com/raven/icon/user.png"))); // NOI18N
 
-        lb.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         lb.setText("Name");
 
-        lbStatus.setFont(new java.awt.Font("sansserif", 2, 12)); // NOI18N
         lbStatus.setForeground(new java.awt.Color(117, 117, 117));
         lbStatus.setText("New User");
 

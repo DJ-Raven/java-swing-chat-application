@@ -1,5 +1,6 @@
 package com.raven.form;
 
+import com.formdev.flatlaf.FlatClientProperties;
 import com.raven.event.EventMessage;
 import com.raven.event.PublicEvent;
 import com.raven.model.Model_Message;
@@ -9,6 +10,12 @@ public class P_Register extends javax.swing.JPanel {
 
     public P_Register() {
         initComponents();
+        lbTitle.putClientProperty(FlatClientProperties.STYLE, ""
+                + "font:+17;");
+        cmdBackLogin.putClientProperty(FlatClientProperties.STYLE, ""
+                + "font:-2;");
+        lbError.putClientProperty(FlatClientProperties.STYLE, ""
+                + "font:-2;");
     }
 
     @SuppressWarnings("unchecked")
@@ -28,7 +35,6 @@ public class P_Register extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        lbTitle.setFont(new java.awt.Font("sansserif", 0, 30)); // NOI18N
         lbTitle.setForeground(new java.awt.Color(87, 87, 87));
         lbTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbTitle.setText("Register");
@@ -44,7 +50,6 @@ public class P_Register extends javax.swing.JPanel {
             }
         });
 
-        cmdBackLogin.setFont(new java.awt.Font("sansserif", 0, 11)); // NOI18N
         cmdBackLogin.setForeground(new java.awt.Color(15, 128, 206));
         cmdBackLogin.setText("Back Login");
         cmdBackLogin.setContentAreaFilled(false);
@@ -57,7 +62,6 @@ public class P_Register extends javax.swing.JPanel {
 
         jLabel3.setText("Confirm Password");
 
-        lbError.setFont(new java.awt.Font("sansserif", 0, 11)); // NOI18N
         lbError.setForeground(new java.awt.Color(255, 0, 0));
         lbError.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbError.setText(" ");
@@ -108,7 +112,7 @@ public class P_Register extends javax.swing.JPanel {
                 .addComponent(cmdBackLogin)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbError)
-                .addGap(0, 9, Short.MAX_VALUE))
+                .addGap(0, 30, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

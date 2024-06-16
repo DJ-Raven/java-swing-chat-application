@@ -1,12 +1,12 @@
 package com.raven.component;
 
+import com.formdev.flatlaf.FlatClientProperties;
 import com.raven.app.MessageType;
 import com.raven.event.PublicEvent;
 import com.raven.model.Model_Send_Message;
 import com.raven.model.Model_User_Account;
 import com.raven.service.Service;
 import com.raven.swing.JIMSendTextPane;
-import com.raven.swing.ScrollBar;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
@@ -17,6 +17,7 @@ import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 import net.miginfocom.swing.MigLayout;
@@ -40,7 +41,7 @@ public class Chat_Bottom extends javax.swing.JPanel {
     }
 
     private void init() {
-        mig = new MigLayout("fillx, filly", "0[fill]0[]0[]2", "2[fill]2[]0");
+        mig = new MigLayout("fill", "0[]0[fill,grow]0[]2", "2[fill]2[]0");
         setLayout(mig);
         JScrollPane scroll = new JScrollPane();
         scroll.setBorder(null);
@@ -58,11 +59,14 @@ public class Chat_Bottom extends javax.swing.JPanel {
         txt.setBorder(new EmptyBorder(5, 5, 5, 5));
         txt.setHintText("Write Message Here ...");
         scroll.setViewportView(txt);
-        ScrollBar sb = new ScrollBar();
-        sb.setBackground(new Color(229, 229, 229));
-        sb.setPreferredSize(new Dimension(2, 10));
+        JScrollBar sb = new JScrollBar();
+        sb.putClientProperty(FlatClientProperties.STYLE, ""
+                + "width:2;"
+                + "thumbInsets:0,0,0,0;"
+                + "track:#E5E5E5;");
+        sb.setUnitIncrement(10);
         scroll.setVerticalScrollBar(sb);
-        add(sb);
+        add(sb, "h 0:10:");
         add(scroll, "w 100%");
         JPanel panel = new JPanel();
         panel.setLayout(new MigLayout("filly", "0[]3[]0", "0[bottom]0"));
